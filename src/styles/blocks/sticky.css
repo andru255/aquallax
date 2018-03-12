@@ -1,0 +1,38 @@
+@import "../constants.css";
+@import "../mixins.css";
+
+/*block name*/
+$block_name: sticky;
+
+/*splash component*/
+.b-$(block_name) {
+    background: linear-gradient(to bottom, black, cubic-bezier(0.50, 1, 1, 1), transparent);
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+
+    &__inner {
+        display: block;
+        margin: 0 auto;
+        padding: 0.5em;
+        max-width: 1200px;
+    }
+
+    &__home {
+       text-decoration: none;
+    }
+
+    h1 {
+        font-family: 'Mina', sans-serif;
+        font-size: 2.5rem;
+        text-align: center;
+        color: white;
+        margin: 0;
+    }
+}
+
+.b-$(block_name)--fixed {
+    background: black;
+    position: fixed;
+    z-index: 3;
+}

@@ -1,0 +1,219 @@
+/*animation*/
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*constants*/
+body {
+  all: initial;
+}
+
+/*constants*/
+
+body {
+  margin: 0;
+}
+
+.b-main-container {
+  all: initial;
+}
+
+/*constants*/
+
+.b-main-container {
+  display: block;
+  position: relative;
+  z-index: 2;
+  background-color: #ddd;
+}
+.b-menu,
+.b-menu li,
+.b-menu a {
+  all: initial;
+}
+
+/*constants*/
+
+/*block name*/
+
+/*splash component*/
+
+.b-menu {
+  display: inline-block;
+  float: right;
+}
+
+.b-menu li {
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.b-menu a {
+  color: white;
+  display: block;
+  font-family: 'Mina', sans-serif;
+  font-size: 1.5rem;
+}
+
+.b-slide__inner,
+.b-slide h2,
+.b-slide p {
+  all: initial;
+}
+
+/*constants*/
+
+/*block name*/
+
+/*splash component*/
+
+.b-slide__inner {
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2% 0;
+}
+
+.b-slide h2 {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0 0 2%;
+}
+
+.b-slide p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+}
+.b-splash,
+.b-splash h1,
+.b-splash p,
+.b-splash__bg,
+.b-splash__inner {
+  all: initial;
+}
+
+/*constants*/
+
+/*block name*/
+
+/*splash component*/
+
+.b-splash {
+  /* execute animation */
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 8s ease infinite;
+  animation: Gradient 8s ease infinite;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.b-splash h1 {
+  font-family: 'Mina', sans-serif;
+  font-size: 5rem;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding-top: 10%;
+}
+
+.b-splash p {
+  font-family: 'Mina', sans-serif;
+  font-size: 2rem;
+  color: #cdcdcd;
+  padding: 2%;
+  display: block;
+}
+
+.b-splash__bg {
+  background: url("/build/assets/hexagonal-pattern.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.b-splash__inner {
+  display: block;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  margin: 8% auto;
+  text-align: center;
+}
+.b-sticky,
+.b-sticky__inner,
+.b-sticky__home,
+.b-sticky h1 {
+  all: initial;
+}
+
+/*constants*/
+
+/*block name*/
+
+/*splash component*/
+
+.b-sticky {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), color-stop(cubic-bezier(0.50, 1, 1, 1)), to(transparent));
+  background: linear-gradient(to bottom, hsl(0, 0%, 0%), hsla(0, 0%, 0%, 0.91265) 4.5%, hsla(0, 0%, 0%, 0.82685) 9.2%, hsla(0, 0%, 0%, 0.74299) 14.1%, hsla(0, 0%, 0%, 0.65989) 19.3%, hsla(0, 0%, 0%, 0.57825) 24.8%, hsla(0, 0%, 0%, 0.49876) 30.6%, hsla(0, 0%, 0%, 0.4221) 36.7%, hsla(0, 0%, 0%, 0.34895) 43.1%, hsla(0, 0%, 0%, 0.27904) 49.9%, hsla(0, 0%, 0%, 0.21344) 57.1%, hsla(0, 0%, 0%, 0.15257) 64.8%, hsla(0, 0%, 0%, 0.09869) 72.9%, hsla(0, 0%, 0%, 0.05293) 81.5%, hsla(0, 0%, 0%, 0.01799) 90.6%, hsla(0, 0%, 0%, 0));
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+
+.b-sticky__inner {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5em;
+  max-width: 1200px;
+}
+
+.b-sticky__home {
+  text-decoration: none;
+}
+
+.b-sticky h1 {
+  font-family: 'Mina', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  margin: 0;
+}
+
+.b-sticky--fixed {
+  background: black;
+  position: fixed;
+  z-index: 3;
+}

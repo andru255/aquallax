@@ -1,0 +1,26 @@
+@import "../constants.css";
+@import "../mixins.css";
+
+/*block name*/
+$block_name: menu;
+
+/*splash component*/
+.b-$(block_name) {
+    display: inline-block;
+    float: right;
+
+    li {
+        margin: 0;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0.5em;
+    }
+
+    a {
+        color: white;
+        display: block;
+        font-family: 'Mina', sans-serif;
+        font-size: 1.5rem;
+    }
+}

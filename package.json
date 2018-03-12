@@ -1,0 +1,34 @@
+{
+  "name": "aquallax theme",
+  "version": "1.0.0",
+  "description": "A minimalist hugo theme",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
+    "babel-preset-env": "^1.5.2",
+    "browser-sync": "^2.18.12",
+    "del": "^3.0.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-concat-css": "^3.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-uglify": "^3.0.0",
+    "postcss-autoreset": "^2.0.2",
+    "postcss-easing-gradients": "^2.0.1",
+    "postcss-import": "^10.0.0",
+    "postcss-mixins": "^6.0.1",
+    "postcss-nested": "^2.0.2",
+    "postcss-simple-vars": "^4.0.0",
+    "pump": "^1.0.2",
+    "run-sequence": "^2.1.0",
+    "uglify-js": "^3.0.27"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "andru255",
+  "license": "ISC"
+}

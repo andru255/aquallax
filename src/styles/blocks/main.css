@@ -1,0 +1,11 @@
+@import "../constants.css";
+@import "../mixins.css";
+
+$block_name: main-container;
+
+.b-$(block_name) {
+    display: block;
+    position: relative;
+    z-index: 2;
+    background-color: #ddd;
+}

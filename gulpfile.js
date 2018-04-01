@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 var gulp = require("gulp");
 var postCSS                = require("gulp-postcss");
 var importPostCSS          = require("postcss-import");
@@ -17,15 +19,17 @@ var del               = require("del");
 var runSequence       = require("run-sequence");
 var browserSync       = require("browser-sync").create();
 var concatCSS         = require("gulp-concat-css");
+var buildDir          = "./docs/";
 
-gulp.task('clean', function(){
+gulp.task("clean", function(){
     return del([ 
-        './build/*.*' 
+        `${buildDir}*.*`,
+        `${buildDir}**/*.*`,
     ]);
 });
 
-gulp.task('css', function(){
-    return gulp.src([ './src/styles/*.css', './src/styles/**/*.css' ])
+gulp.task("css", function(){
+    return gulp.src([ "./src/styles/*.css", "./src/styles/**/*.css" ])
         .pipe(postCSS([
             importPostCSS(),
             mixinsPostCSS(),
@@ -36,32 +40,32 @@ gulp.task('css', function(){
             resetPostCSS()
         ]))
         .pipe(concatCSS("main.css"))
-        .pipe(gulp.dest('./build'));
+        .pipe(gulp.dest(buildDir));
 });
 
-gulp.task('assets', function(){
-    return gulp.src(`./src/assets/*.*`)
-        .pipe(gulp.dest('./build/assets'));
+gulp.task("assets", function(){
+    return gulp.src("./src/assets/*.*")
+        .pipe(gulp.dest(`${buildDir}assets`));
 });
 
-gulp.task('html', function(){
-    return gulp.src('./src/example/*.html')
-        .pipe(gulp.dest('./build'));
+gulp.task("html", function(){
+    return gulp.src("./src/example/*.html")
+        .pipe(gulp.dest(`${buildDir}`));
 });
 
-gulp.task('js', function(){
+gulp.task("js", function(){
     return gulp.src([ 
-            './src/scripts/**/*.js', 
-            './src/scripts/*.js' 
+            "./src/scripts/**/*.js", 
+            "./src/scripts/*.js" 
         ]).pipe(babel({
             presets: ["env"],
             plugins: ["transform-remove-strict-mode"]
         }))
-        .pipe(concat('min.js'))
-        .pipe(gulp.dest('./build/'));
+        .pipe(concat("min.js"))
+        .pipe(gulp.dest(`${buildDir}`));
 });
 
-gulp.task('js-min', function(cb){
+gulp.task("js-min", function(cb){
     var options = {
         mangle: {
             toplevel: true
@@ -69,14 +73,14 @@ gulp.task('js-min', function(cb){
         ie8: true
     };
     return pump([
-        gulp.src("./build/min.js"),
+        gulp.src(`${buildDir}min.js`),
         minify(options),
-        gulp.dest("./build")
+        gulp.dest(`${buildDir}`)
     ]);
 });
 
 //development
-gulp.task('server', function(){
+gulp.task("server", function(){
     browserSync.init({
         server: {
             baseDir: "./",
@@ -84,14 +88,14 @@ gulp.task('server', function(){
         }
     });
 
-    gulp.watch([ "./src/styles/*.*", "./src/styles/**/*.*"], ['css']);
-    gulp.watch([ "./src/scripts/*.*", './src/scripts/**/*.js'], ['js']);
-    gulp.watch("./src/example/index.html", ['html']);
-    gulp.watch("./src/assets/*.*", ['assets']);
+    gulp.watch([ "./src/styles/*.*", "./src/styles/**/*.*"], ["css"]);
+    gulp.watch([ "./src/scripts/*.*", './src/scripts/**/*.js'], ["js"]);
+    gulp.watch("./src/example/index.html", ["html"]);
+    gulp.watch("./src/assets/*.*", ["assets"]);
 
-    gulp.watch("./build/*.css").on("change", browserSync.reload);
-    gulp.watch("./build/*.html").on("change", browserSync.reload);
-    gulp.watch("./build/*.js").on("change", browserSync.reload);
+    gulp.watch(`${buildDir}*.css`).on("change", browserSync.reload);
+    gulp.watch(`${buildDir}*.html`).on("change", browserSync.reload);
+    gulp.watch(`${buildDir}*.js`).on("change", browserSync.reload);
 });
 
 gulp.task("default", function(cb){

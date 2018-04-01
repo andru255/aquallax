@@ -33,7 +33,11 @@ gulp.task("css", function(){
         .pipe(postCSS([
             importPostCSS(),
             mixinsPostCSS(),
-            simpleVarsPostCSS(),
+            simpleVarsPostCSS({
+                variables : {
+                    assets_folder: "../assets"
+                }
+            }),
             nestedPostCSS(),
             autoprefixer(),
             gradientsPostCSS(),

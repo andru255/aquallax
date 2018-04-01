@@ -156,7 +156,7 @@ body {
 }
 
 .b-splash__bg {
-  background: url("/build/assets/hexagonal-pattern.png");
+  background: url("assets/hexagonal-pattern.png");
   position: absolute;
   top: 0;
   left: 0;

@@ -34,7 +34,7 @@ $block_name: splash;
     }
 
     &__bg {
-        background: url("/build/assets/hexagonal-pattern.png");
+        background: url("$(assets_folder)/hexagonal-pattern.png");
         position: absolute;
         top: 0;
         left: 0;

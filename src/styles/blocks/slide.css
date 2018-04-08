@@ -11,7 +11,7 @@ $block_name: slide;
         display: block;
         margin: 0 auto;
         max-width: 1200px;
-        padding: 2% 0;
+        padding: 2% 5%;
     }
 
     h2 {

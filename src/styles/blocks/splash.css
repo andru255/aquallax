@@ -29,8 +29,9 @@ $block_name: splash;
         font-family: 'Mina', sans-serif;
         font-size: 2rem;
         color: #cdcdcd;
-        padding: 2%;
+        padding: 2% 5%;
         display: block;
+        text-align: center;
     }
 
     &__bg {

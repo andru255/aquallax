@@ -10,6 +10,7 @@ $block_name: sticky;
     position: fixed;
     width: 100%;
     z-index: 2;
+    @mixin all_transition;
 
     &__inner {
         display: block;

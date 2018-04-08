@@ -35,6 +35,7 @@ body {
 /*constants*/
 
 body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Avenir Next', Avenir, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   margin: 0;
 }
 
@@ -171,6 +172,10 @@ body {
   position: relative;
   margin: 8% auto;
   text-align: center;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 .b-sticky,
 .b-sticky__inner,
@@ -191,6 +196,10 @@ body {
   position: fixed;
   width: 100%;
   z-index: 2;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
 }
 
 .b-sticky__inner {

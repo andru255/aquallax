@@ -46,5 +46,6 @@ $block_name: splash;
         @mixin inner_base;
         margin: 8% auto;
         text-align: center;
+        @mixin all_transition;
     }
 }
